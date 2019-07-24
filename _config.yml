@@ -3,19 +3,20 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
-timezone:
+title: 試毅-思伟
+#subtitle: Writing code is keep my heart beating only reason.
+description: 試毅-思伟_技术博客
+keywords: 試毅-思伟,試毅-思伟_技术博客
+author: 試毅-思伟
+language: zh-Hans
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://zhousiwei.gitee.io/
 root: /
 permalink: :year/:month/:day/:title/
+#permalink: :category/:title/
 permalink_defaults:
 
 # Directory
@@ -52,6 +53,8 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
+    #top: 1
+    #date: -1
   
 # Category & Tag
 default_category: uncategorized

@@ -4,6 +4,7 @@ date: 2019.07.01 10:06
 tags:
   - 日记本
 description: Git分支的创建、删除、切换
+copyright: true
 ---
 ##### 1、本地创建新分支并切换到新分支
 ```shell
