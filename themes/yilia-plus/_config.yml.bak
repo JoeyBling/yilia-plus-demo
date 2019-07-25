@@ -28,7 +28,7 @@ subnav:
   #linkedin: "#"
 
 # RSS订阅(关于如何配置启用:https://www.jianshu.com/p/2aaac7a19736)
-rss: /atom.xml
+rss: /yilia-plus-demo/atom.xml
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，

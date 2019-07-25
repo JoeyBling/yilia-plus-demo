@@ -1,6 +1,6 @@
 ---
 title: SpringBoot设置默认首页
-date: 2018-04-26 15:46
+date: 2018-04-26 15:49
 tags: Java
 description: SpringBoot设置默认首页
 ---
