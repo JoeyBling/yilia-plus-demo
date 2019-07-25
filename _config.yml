@@ -13,8 +13,8 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://zhousiwei.gitee.io/
-root: /
+url: https://joeybling.github.io/yilia-plus-demo/
+root: /yilia-plus-demo/
 permalink: :year/:month/:day/:title/
 #permalink: :category/:title/
 permalink_defaults:
