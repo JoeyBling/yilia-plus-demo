@@ -1,6 +1,11 @@
 hexo-theme-yilia-plus配置Demo
 ================
 
+[![hexo-theme-yilia-plus](https://img.shields.io/badge/hexo_theme-yilia_plus-red.svg "hexo-theme-yilia-plus")](https://github.com/JoeyBling/hexo-theme-yilia-plus "hexo-theme-yilia-plus")
+[![Author](https://img.shields.io/badge/Author-JoeyBling-red.svg "Author")](https://zhousiwei.gitee.io "Author")
+[![LICENSE](https://img.shields.io/github/license/JoeyBling/hexo-theme-yilia-plus "LICENSE")](./LICENSE "LICENSE")
+![hexo](https://img.shields.io/badge/hexo-blue.svg "hexo")
+
 > **欢迎使用和Star支持，如使用过程中碰到问题，可以提出Issue，我会尽力完善**
 
 ## 介绍
