@@ -30,14 +30,17 @@
   <% } %>
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
-    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <link rel="alternative" href="<%- url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
   <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.favicon %>">
+    <link rel="icon" href="<%- url_for(theme.favicon) %>">
+  <% } %>
+  <% if (theme.apple_touch_icon){ %>
+    <link rel="apple-touch-icon" href="<%- url_for(theme.apple_touch_icon) %>">
   <% } %>
   <%- partial('css') %>
   <style type="text/css">
-  <% var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)' %>
+    <% var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)' %>
     #container.show {
       background: <%= theme.style && theme.style.slider ? theme.style.slider : defaultCtnBg %>;
     }
@@ -49,4 +52,10 @@
  	 <script src="<%=config.root%>assets/clicklove.js"></script>
   <% } %>
   <%- partial('baidu-push') %>
+
+  <% if (theme.progressBar.enable) { %>
+    <script src="<%=config.root%>assets/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/<%= theme.progressBar.color || 'blue'%>/pace-theme-<%= theme.progressBar.type || 'minimal'%>.css" rel="stylesheet">
+  <% } %>
+
 </head>

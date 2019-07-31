@@ -21,14 +21,14 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  mail: "mailto:zhousiwei0911@qq.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
   #linkedin: "#"
 
 # RSS订阅(关于如何配置启用:https://www.jianshu.com/p/2aaac7a19736)
-rss: /yilia-plus-demo/atom.xml
+rss: /atom.xml
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
@@ -52,9 +52,9 @@ reward_type: 2
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: /yilia-plus-demo/img/alipay.jpg
+alipay: /img/alipay.jpg
 # 微信二维码图片地址
-weixin: /yilia-plus-demo/img/weixin.png
+weixin: /img/weixin.png
 
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
@@ -73,10 +73,10 @@ baidu_analytics: ''
 google_analytics: ''
 
 # 网站图标
-favicon: /yilia-plus-demo/favicon.ico
+favicon: /favicon.ico
 
 # 你的头像url
-avatar: /yilia-plus-demo/img/head.jpg
+avatar: /img/head.jpg
 
 # 是否开启分享
 share_jia: true
@@ -89,7 +89,7 @@ share_jia: true
 changyan_appid: false
 changyan_conf: false
 
-# 2、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+# 2、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia-plus的
 disqus: false
 
 # 3、Gitment----基于GitHub的评论系统(关闭请设置gitment_owner为false)
@@ -120,9 +120,11 @@ giteement:
     client_id: ''           #client ID
     client_secret: ''       #client secret
 
-# 是否开启访问量统计功能(不蒜子)
+# 访问量统计功能(不蒜子)
 busuanzi:
   enable: true
+  site_visit: true  # 站点访问量显示
+  article_visit: true  # 文章访问量显示
 
 # 网易云音乐插件
 music:
@@ -148,6 +150,37 @@ baidu_push: false
 # 版权声明
 # 版权声明type设定：0-关闭版权声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明
 copyright_type: 2
+
+# 网站成立年份(默认为 2018，若填入年份小于当前年份，则显示为 2018-2019 类似的格式)
+since: 2018
+
+# Progress Bar | 页面加载进度条
+# Demo: http://github.hubspot.com/pace/docs/welcome/
+# type: barber-shop|big-counter|bounce|center-atom|center-circle|
+#       center-radar|center-simple|corner-indicator|flash|flat-top|
+#       loading-bar|mac-osx|minimal
+# color: black|blue|green|orange|pink|purple|red|silver|white|yellow|
+progressBar:
+  enable: false
+  type: 'minimal'  # Keep Quotes | 保留引号避免出错(某些type会导致样式重叠排版错误)
+  color: blue
+
+# Apple Touch icon 苹果图标(关闭请设置为false)
+apple_touch_icon: '/apple-touch-icon-180x180.png'
+
+# Tab Title Change | 标签页标题切换
+tab_title_change:
+  enable: true
+  left_tab_title: '(つェ⊂) 我藏好了哦~ '
+  return_tab_title: '(*´∇｀*) 被你发现啦~ '
+
+# 是否开启字数统计(关闭请设置enable为false)
+# 必须安装`hexo-wordcount`插件，在根目录执行`npm i hexo-wordcount --save`
+# 也可以单独在md文件里Front-matter设置`no_word_count: true`属性，来自定义关闭字数统计
+word_count:
+  enable: true
+  # 只在文章详情显示(不在首页显示)
+  only_article_visit: true
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:

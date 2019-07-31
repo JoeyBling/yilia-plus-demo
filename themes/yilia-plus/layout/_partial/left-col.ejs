@@ -3,7 +3,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="<%=theme.root%>" class="profilepic">
-			<img src="<%=theme.avatar%>" class="js-avatar">
+			<img src="<%- url_for(theme.avatar) %>" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="<%=theme.root%>"><%=theme.author%></a></h1>
@@ -29,7 +29,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				<% for (var i in theme.subnav){ %>
-					<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
+					<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<% if (__('subnav.title.'+ i) != 'NULL'){ %><%= __('subnav.title.'+ i) %><% } else { %><%= i %><% } %>"><i class="icon-<%= i %>"></i></a>
 		        <%}%>
 			</div>
 		<!-- 网易云音乐插件 -->

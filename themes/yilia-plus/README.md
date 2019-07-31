@@ -1,11 +1,45 @@
 hexo-theme-yilia-plus
 ================
 
+![star](https://img.shields.io/github/stars/JoeyBling/hexo-theme-yilia-plus "star")
+![fork](https://img.shields.io/github/forks/JoeyBling/hexo-theme-yilia-plus "fork")
+![GitHub last commit](https://img.shields.io/github/last-commit/JoeyBling/hexo-theme-yilia-plus.svg?label=commits "GitHub last commit")
+![issues](https://img.shields.io/github/issues/JoeyBling/hexo-theme-yilia-plus "issues")
+[![Author](https://img.shields.io/badge/Author-JoeyBling-red.svg "Author")](https://zhousiwei.gitee.io "Author")
+[![LICENSE](https://img.shields.io/github/license/JoeyBling/hexo-theme-yilia-plus "LICENSE")](./LICENSE "LICENSE")
+![hexo](https://img.shields.io/badge/hexo-blue.svg "hexo")
+
+
+
 &#160;&#160;&#160;&#160;此项目是根据[hexo-theme-yilia](https://github.com/litten/hexo-theme-yilia)主题做了一些优化和改动，写这个项目的初衷就是深入学习`Hexo`。使用`yilia`主题可以快速迁移到`yilia-plus`
 
 #### [立即体验](#三开始使用)
 
 > **欢迎使用和Star支持，如使用过程中碰到问题，可以提出Issue，我会尽力完善**
+
+> **同时也欢迎相同爱好者加入一起维护此项目**
+
+## 关于[hexo-theme-yilia-plus](https://github.com/JoeyBling/hexo-theme-yilia-plus)主题在原基础上做了以下功能升级
+1. 手机端头像添加主页跳转链接
+2. 集成不蒜子访问量统计功能
+3. 网易云音乐插件
+4. 页面点击小红心效果
+5. 增加了多个SubNav导航图标展示
+6. 添加GitHub Ribbons(Fork me)
+7. 页脚 Litten自定义
+8. 添加版权声明
+9. 添加百度站长平台主动推送
+10. 集成 gitment 评论 ➡️ [https://github.com/JoeyBling/yilia-plus-demo](https://github.com/JoeyBling/yilia-plus-demo)
+11. [集成码云评论](https://gitee.com/zhousiwei/giteement) ➡️ [https://gitee.com/zhousiwei/yilia-plus-demo](https://gitee.com/zhousiwei/yilia-plus-demo)
+12. 添加网站成立年份
+13. 页面加载进度条
+14. 添加苹果图标
+15. 标签页标题切换功能
+16. 添加字数统计功能
+17. 其他样式轻微调优、社交图标优化
+
+> 如果有小伙伴有新功能的意见或者改进欢迎给我提意见和建议~
+
 
 ## 介绍
 - 功能还很少，欢迎各位给我提意见和建议~
@@ -37,6 +71,12 @@ hexo-theme-yilia-plus
 
 &#160;&#160;&#160;&#160;为了性能和开发工程化考虑，[yilia-plus](https://github.com/JoeyBling/hexo-theme-yilia-plus) 需要使用`webpack`进行构建生成。
 如果您对主题有一些定制化的需求，请参考wiki[《yilia-plus源码目录结构及构建须知》](https://github.com/JoeyBling/hexo-theme-yilia-plus/wiki/yilia-plus%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5)
+
+#### 评论支持
+- [Gitment](https://github.com/imsun/gitment)
+- [基于码云的评论系统](https://gitee.com/zhousiwei/giteement)
+- DISQUS
+- 搜狐畅言 
 
 ## 三、开始使用
 
@@ -88,7 +128,7 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  mail: "mailto:zhousiwei0911@qq.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -156,7 +196,7 @@ share_jia: true
 changyan_appid: false
 changyan_conf: false
 
-# 2、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+# 2、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia-plus的
 disqus: false
 
 # 3、Gitment----基于GitHub的评论系统(关闭请设置gitment_owner为false)
@@ -187,9 +227,11 @@ giteement:
     client_id: ''           #client ID
     client_secret: ''       #client secret
 
-# 是否开启访问量统计功能(不蒜子)
+# 访问量统计功能(不蒜子)
 busuanzi:
   enable: true
+  site_visit: true  # 站点访问量显示
+  article_visit: true  # 文章访问量显示
 
 # 网易云音乐插件
 music:
@@ -215,6 +257,37 @@ baidu_push: false
 # 版权声明
 # 版权声明type设定：0-关闭版权声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明
 copyright_type: 2
+
+# 网站成立年份(默认为 2018，若填入年份小于当前年份，则显示为 2018-2019 类似的格式)
+since: 2018
+
+# Progress Bar | 页面加载进度条
+# Demo: http://github.hubspot.com/pace/docs/welcome/
+# type: barber-shop|big-counter|bounce|center-atom|center-circle|
+#       center-radar|center-simple|corner-indicator|flash|flat-top|
+#       loading-bar|mac-osx|minimal
+# color: black|blue|green|orange|pink|purple|red|silver|white|yellow|
+progressBar:
+  enable: false
+  type: 'minimal'  # Keep Quotes | 保留引号避免出错(某些type会导致样式重叠排版错误)
+  color: blue
+
+# Apple Touch icon 苹果图标(关闭请设置为false)
+apple_touch_icon: '/apple-touch-icon-180x180.png'
+
+# Tab Title Change | 标签页标题切换
+tab_title_change:
+  enable: true
+  left_tab_title: '(つェ⊂) 我藏好了哦~ '
+  return_tab_title: '(*´∇｀*) 被你发现啦~ '
+
+# 是否开启字数统计(关闭请设置enable为false)
+# 必须安装`hexo-wordcount`插件，在根目录执行`npm i hexo-wordcount --save`
+# 也可以单独在md文件里Front-matter设置`no_word_count: true`属性，来自定义关闭字数统计
+word_count:
+  enable: true
+  # 只在文章详情显示(不在首页显示)
+  only_article_visit: true
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
@@ -256,6 +329,7 @@ aboutme: 主要涉及技术：<br>Java后端开发、聚合支付、<br>公众�
 ### Hexo博客优化
 - [Hexo博客集成码云评论系统](https://www.jianshu.com/p/f5c4633524c7)
 - [Hexo博客集成Gitment评论](https://www.jianshu.com/p/ac7658cc912f)
+- [Hexo 编译文档时 JS或HTML 混乱解决方案](https://www.jianshu.com/p/2a8b850d3f92)
 - [Hexo博客配置RSS插件](https://www.jianshu.com/p/2aaac7a19736)
 - [Hexo博客使用gulp压缩静态资源](https://www.jianshu.com/p/1123c89c491a)
 - [新增Hexo博客文章置顶功能](https://www.jianshu.com/p/a0afac70afc8)
@@ -273,4 +347,4 @@ aboutme: 主要涉及技术：<br>Java后端开发、聚合支付、<br>公众�
 
 ## License
 
-[Apache License](./LICENSE)
+[![LICENSE](https://img.shields.io/github/license/JoeyBling/hexo-theme-yilia-plus "LICENSE")](./LICENSE "LICENSE")
