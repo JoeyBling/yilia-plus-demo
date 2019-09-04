@@ -30,7 +30,7 @@ gulp.task('minify-html', function (done) {
 
 // 压缩js文件
 gulp.task('minify-js', function (done) {
-    return gulp.src(['./public/**/*.js', '!./public/**/*.min.js'])
+    return gulp.src(['./public/**/*.js', '!./public/**/*.min.js', '!./public/**/activate-power-mode.js'])
         .pipe(babel({
             //将ES6代码转译为可执行的JS代码
             presets: ['es2015'] // es5检查机制

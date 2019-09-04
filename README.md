@@ -10,6 +10,7 @@ hexo-theme-yilia-plus配置Demo
 
 ## 介绍
 - 功能还很少，欢迎各位给我提意见和建议~
+- [集成 gitment 评论例子](https://joeybling.github.io/yilia-plus-demo/) | [集成码云评论例子](https://zhousiwei.gitee.io/yilia-plus-demo/)
 
 [yilia-plus](https://github.com/JoeyBling/hexo-theme-yilia-plus) 是为 [hexo](https://github.com/hexojs/hexo) 2.4+制作的主题。
 崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](https://zhousiwei.gitee.io) 查看效果。
@@ -28,14 +29,27 @@ hexo-theme-yilia-plus配置Demo
 ## 本地预览
 ```bash
 npm install
-hexo s -g
+npm run dev
 ```
 
 ## 编译部署
 ```bash
-hexo g
-//生成的public文件夹的内容上传至GitHub，或者使用 hexo d 进行配置自动部署
+npm run clean
+npm run dist
+//生成的public文件夹的内容上传至GitHub/其他服务器，或者使用 hexo d 进行配置自动部署
 ```
+
+## 执行压缩
+```bash
+npm run gulp
+```
+
+## 项目支持
+
+### [hexo-theme-yilia-plus](https://github.com/JoeyBling/hexo-theme-yilia-plus)
+
+> 一个简洁优雅的hexo主题 A simple and elegant theme for hexo.
+
 
 ## 关于主题：
 1. 崇尚简约

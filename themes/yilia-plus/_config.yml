@@ -1,4 +1,4 @@
-# Header-菜单
+﻿# Header-菜单
 menu:
   主页: /
   技术笔记: https://zhousiwei.gitee.io/ibooks/
@@ -6,12 +6,13 @@ menu:
   日记本: /tags/日记本/
   Linux: /tags/Linux
 
-# SubNav-导航
-subnav:
+# subNav-子导航
+subNav:
   github: "https://github.com/JoeyBling"
   gitee: "https://gitee.com/zhousiwei" # 码云
   jianshu: "https://www.jianshu.com/u/02cbf31a043a" #简书
   csdn: "https://blog.csdn.net/qq_30930805"
+  #csdn: "#"
   #rss: "#"
   zhihu: "https://zhihu.com/people/joeybling"
   qq: "img/2434387555.jpg"
@@ -26,6 +27,14 @@ subnav:
   #google: "#"
   #twitter: "#"
   #linkedin: "#"
+
+# 悬停预览图片效果
+hover_effect:
+  ## `global` 0: Set separately, 1: Enable global 2: Close global
+  ## `global` 0: 分开设置, 1: 全局启用, 2: 全局关闭
+  global: 1
+  # SubNav-导航
+  subNav: true
 
 # RSS订阅(关于如何配置启用:https://www.jianshu.com/p/2aaac7a19736)
 rss: /atom.xml
@@ -43,8 +52,12 @@ excerpt_link: more
 show_all_link: '展开全文'
 # 数学公式
 mathjax: false
-# 是否在新窗口打开链接
-open_in_new: true
+
+# Open link in a new tab | 是否在新窗口打开链接
+open_in_new:
+  article: true  # 文章链接
+  menu: true   # 导航菜单
+  subNav: true  # 子菜单
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
@@ -94,10 +107,10 @@ disqus: false
 
 # 3、Gitment----基于GitHub的评论系统(关闭请设置gitment_owner为false)
 # 关于如何集成:https://www.jianshu.com/p/ac7658cc912f
-#gitment_owner: false      #你的 GitHub ID
 gitment_owner: JoeyBling      #你的 GitHub ID
-gitment_remote: false  # 是否使用官方js(false可以提升访问速度)
-gitment_repo: 'yilia-plus-demo'          #存储评论的 repo
+# 是否使用官方js(false可以提升访问速度，本地修改过一部分的js，官方js可能会出现服务器不稳定，不太建议使用)
+gitment_remote: false
+gitment_repo: 'yilia-plus-demo'          #存储评论的 repo name(需要在Github创建)
 gitment_oauth:
   client_id: '1062039060f4021e8ae2'           #client ID
   client_secret: '6ffbfcbd49ef5b123d524664657145a662179f34'       #client secret
@@ -109,16 +122,15 @@ giteement:
   enable: false  # 是否启用码云评论系统
   # 是否使用官方js(false可以提升访问速度)
   remote: false
-  redirect_uri: https://zhousiwei.gitee.io/   # 应用回调地址(请和配置的第三方应用保持一致)
-  # oauth_uri: https://zhousiwei.gitee.io/
+  redirect_uri: 'https://zhousiwei.gitee.io/yilia-plus-demo'   # 应用回调地址(请和配置的第三方应用保持一致)
   # 不能更改(网上开源项目https://github.com/Rob--W/cors-anywhere作者提供的专门用来跨域服务器的配置)
   oauth_uri: https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token
-  giteeID: zhousiwei  # 你的码云账号英文名
-  # 存储评论的 repo
-  repo: zhousiwei
+  giteeID: 'zhousiwei'  # 你的码云账号英文名
+  # 存储评论的 repo name(需要在码云仓库创建公开仓库)
+  repo: 'yilia-plus-demo'
   gitment_oauth:
-    client_id: ''           #client ID
-    client_secret: ''       #client secret
+    client_id: '91e05bd40f24e75e7a61e8e0aafc1b541f525851874fe5b0b4d25cc9ea0bf68c'           #client ID
+    client_secret: '70d725414c22dc29ca7291c9a853acb4d9de666126ba95dfcb3a186f1ff52d38'       #client secret
 
 # 访问量统计功能(不蒜子)
 busuanzi:
@@ -129,22 +141,29 @@ busuanzi:
 # 网易云音乐插件
 music:
   enable: false
-  #id: 1332647902  # 网易云分享的ID
-  autoplay: true  # 是否开启自动播放
+  # 播放器尺寸类型(1：长尺寸、2：短尺寸)
+  type: 2
+  #id: 1332647902  # 网易云分享的音乐ID(更换音乐请更改此配置项)
+  autoPlay: true  # 是否开启自动播放
+  # 提示文本(关闭请设置为false)
+  text: '这似乎是首纯音乐，请尽情的欣赏它吧！'
 
 # 页面点击小红心
-clicklove:
+clickLove:
+  # (关闭请设置为false)
   enable: true
 
 # GitHub Ribbons(https://github.blog/2008-12-19-github-ribbons/)
 github:
+  # (关闭请设置为false)
   url: https://github.com/JoeyBling/hexo-theme-yilia-plus
 
-# 页脚 Litten
-pagefooter:
+# 页脚 Litten(此配置项已弃用)
+# 帮助我们让更多人可以更方便使用Hexo，请尽量不要修改此主题配置
+pageFooter:
   litten: GitHub:<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus" target="_blank">hexo-theme-yilia-plus</a>
 
-# 开启百度站长平台主动推送(https://ziyuan.baidu.com/linksubmit/index)
+# 开启百度站长平台自动推送(https://ziyuan.baidu.com/linksubmit/index)
 baidu_push: false
 
 # 版权声明
@@ -162,7 +181,7 @@ since: 2018
 # color: black|blue|green|orange|pink|purple|red|silver|white|yellow|
 progressBar:
   enable: false
-  type: 'minimal'  # Keep Quotes | 保留引号避免出错(某些type会导致样式重叠排版错误)
+  type: 'flash'  # Keep Quotes | 保留引号避免出错(某些type会导致样式重叠排版错误)
   color: blue
 
 # Apple Touch icon 苹果图标(关闭请设置为false)
@@ -174,19 +193,52 @@ tab_title_change:
   left_tab_title: '(つェ⊂) 我藏好了哦~ '
   return_tab_title: '(*´∇｀*) 被你发现啦~ '
 
+# https://github.com/willin/hexo-wordcount
 # 是否开启字数统计(关闭请设置enable为false)
-# 必须安装`hexo-wordcount`插件，在根目录执行`npm i hexo-wordcount --save`
 # 也可以单独在md文件里Front-matter设置`no_word_count: true`属性，来自定义关闭字数统计
 word_count:
   enable: true
   # 只在文章详情显示(不在首页显示)
   only_article_visit: true
 
+# 文字输入特效
+# https://github.com/disjukr/activate-power-mode
+activate_power_mode:
+  enable: true
+  # 使输入模式丰富多彩
+  colorful: true
+  # 是否开启摇动
+  shake: false
+
+# 看板娘动态模型插件
+## https://github.com/JoeyBling/live2d-widget.js
+live2d:
+  # (关闭请设置为false)
+  enable: true
+  # 模型名称(取值请参考：https://github.com/JoeyBling/hexo-theme-yilia-plus/wiki/live2d%E6%A8%A1%E5%9E%8B%E5%8C%85%E5%B1%95%E7%A4%BA)
+  model: miku
+  display:
+    position: right # 显示位置：left/right(default: 'right')
+    width: 145  # 模型的长度(default: 150)
+    height: 320 # 模型的高度(default: 300)
+    hOffset: 50 # 水平偏移(default: 0)
+    #vOffset: -20 # 垂直偏移(default: -20)
+  mobile:
+    show: false # 是否在移动设备上显示(default: true)
+    scale: 0.6 # 移动设备上的缩放(default: 0.5)
+  react:
+    opacity: 1 # 模型透明度(default: 0.7)
+
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 头像上面的背景颜色
   # header: '#D3D1DC'
   header: '#4d4d4d'
+  gif:
+    # 是否启用左侧边栏动态图效果
+    enable: false
+    # 自定义背景图路径(默认可以不设置，提供默认背景图)
+    # path: /img/biubiubiu.gif
   # 右滑板块背景
   slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
 
@@ -207,6 +259,10 @@ smart_menu:
 
 # 友情链接
 friends:
+  Liu_Cabbage（我徒弟，多多支持）:
+    url: http://www.baocaige.top
+    img: http://www.baocaige.top/favicon.ico
+    description: 一叶浮萍归大海，人生何处不相逢（我徒弟，多多支持）
   技术笔记:
     url: https://zhousiwei.gitee.io/ibooks/
     img: https://zhousiwei.gitee.io/ibooks/favicon.ico
@@ -223,6 +279,14 @@ friends:
     url: https://www.zhihu.com/people/joeybling
   微博:
     url: http://weibo.com/jayinfo
+  燕十三:
+    url: https://www.yanshisan.cn
+    img: https://www.yanshisan.cn/logo.png
+    description: 燕十三·一个人的江湖
+  悠溯志的技术小站:
+    url: https://www.yszh.ml/
+    img: https://www.yszh.ml/favicon.ico
+    description: 走自己的路，让别人说去吧。适合自己的才是最好的！
 
 # 关于我
 aboutme: 主要涉及技术：<br>Java后端开发、聚合支付、<br>公众号开发、开源爱好者、Linux<br><br>联系QQ:2434387555<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家

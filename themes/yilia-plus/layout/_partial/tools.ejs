@@ -5,16 +5,16 @@
 %>
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
-    <% var count = 0%>
+    <% var count = 0; %>
     <% for (var i in theme.smart_menu){ %>
       <% if (theme.smart_menu[i]) { %>
       <% count++ %>
       <% } %>
     <% } %>
-    <% var ulWidth = '70%' %>
+    <% var ulWidth = '70%'; %>
 
     <ul style="width: <%= ulWidth %>">
-    <% var divide = 100 / count + '%' %>
+    <% var divide = 100 / count + '%'; %>
     <% for (var i in theme.smart_menu){ %>
       <% if(theme.smart_menu[i]){ %>
       <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a href="javascript:void(0)" q-class="active:<%-i%>"><%= theme.smart_menu[i] %></a></li>
@@ -46,7 +46,7 @@
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia-plus根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -90,9 +90,9 @@
         <ul class="search-ul">
           <% for (var i in theme.friends){ %>
             <li class="search-li">
-              <a href="<%- url_for(theme.friends[i].url) %>" target="_blank" class="search-title" <% if (theme.friends[i].description){ %>title="<%= theme.friends[i].description %>"<% } %></a>
+              <a href="<%- url_for(theme.friends[i].url) %>" target="_blank" class="search-title" <% if (theme.friends[i].description){ %>title="<%= theme.friends[i].description %>"<% } %>>
                 <% if (theme.friends[i].img){ %>
-                  <img src="<%- url_for(theme.friends[i].img) %>" style="width: 2em;height: 2em;">
+                  <img src="<%- url_for(theme.friends[i].img) %>">
                 <% } else { %>
                   <i class="icon-link icon"></i>
                 <% } %>
@@ -107,8 +107,9 @@
 
     <%if(hasAboutme){%>
     	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	<%if(theme.aboutme){%>
-  	  		<div class="aboutme-wrap" id="js-aboutme"><%=theme.aboutme%></div>
+        <%if(theme.aboutme){%>
+          <%# "fix.js about me 转义html" %>
+  	  		<div class="aboutme-wrap" id="aboutme"><%-theme.aboutme%></div>
   	  	<%}%>
     	</section>
     <%}%>

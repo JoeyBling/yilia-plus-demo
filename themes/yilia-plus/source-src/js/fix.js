@@ -8,7 +8,7 @@ function init() {
     $nav.innerHTML = $nav.innerHTML + '<a class="extend next disabled" rel="next">Next &raquo;</a>'
   }
 
-  // 新窗口打开
+  // 文章链接新窗口打开
   if (yiliaConfig && yiliaConfig.open_in_new) {
     let $a = document.querySelectorAll(('.article-entry a:not(.article-more-a)'))
     $a.forEach(($em) => {
@@ -26,12 +26,25 @@ function init() {
     })
   }
 
-  // about me 转义
-  var $aboutme = document.querySelector('#js-aboutme')
-  if ($aboutme && $aboutme.length !== 0) {
-    $aboutme.innerHTML = $aboutme.innerText
-  }
+  // about me 转义html
+  // var $aboutme = document.querySelector('#aboutme')
+  // if ($aboutme && $aboutme.length !== 0) {
+  //   $aboutme.innerHTML = $aboutme.innerText
+  // }
 
+  // 初始化data-img属性值(实现悬停元素预览图片效果)
+  /* document.querySelectorAll("a").forEach($a => {
+    console.log($a.href);
+    if (isImageType($a.href)) {
+      $a.setAttribute("data-img", $a.href)
+    }
+  }); */
+
+}
+
+// 判断字符串是否是图片格式类型
+function isImageType(typeStr) {
+  return /\.(gif|jpg|jpeg|png)$/i.test(typeStr);
 }
 
 module.exports = {
