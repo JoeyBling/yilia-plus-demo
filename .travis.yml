@@ -34,7 +34,7 @@ after_success:
   - git add .
   - git commit -m "deploy at `date +\"%Y-%m-%d %H:%M:%S\"`"
   - git push --force --quiet "https://${CI_TOKEN_GITHUB}@${GITHUB_REPO}" master:gh-pages
-  - git push --force --quiet "https://devyang:${CI_TOKEN_GITEE}@${GITEE_REPO}" master:gh-pages
+  - git push --force --quiet "https://${CI_TOKEN_GITEE}@${GITEE_REPO}" master:gh-pages
 
 git:
   depth: false
