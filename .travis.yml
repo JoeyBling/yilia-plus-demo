@@ -1,0 +1,47 @@
+language: node_js
+
+node_js:
+  - node
+
+# Travis-CI Caching
+cache:
+  yarn: true
+  npm: false
+  directories:
+    - node_modules
+
+before_install:
+
+# S: Build LifeCycle
+install:
+  - npm install
+
+# before_script:
+
+script:
+  # - npm run eslint # 工程测试
+  - npm run dev # 工程测试
+  # - npm run clean # 清除缓存
+  - npm run dist # 工程构建打包
+
+git:
+  depth: false
+
+branches:
+  only:
+    - master
+
+# before_deploy:
+#   - yarn build
+
+deploy:
+  provider: pages
+  # github-token: $GITHUB_TOKEN
+  # local-dir: ./
+  skip-cleanup: true
+  # 默认为gh-pages
+  target-branch: gh-pages
+  email: 2434387555@qq.com
+  name: JoeyBling
+  on:
+    branch: master # 当master分支有push事件的时候执行deploy流程

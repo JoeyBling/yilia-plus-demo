@@ -36,7 +36,7 @@ npm run dev
 ```bash
 npm run clean
 npm run dist
-//生成的public文件夹的内容上传至GitHub/其他服务器，或者使用 hexo d 进行配置自动部署
+// 生成的public文件夹的内容上传至GitHub/其他服务器，或者使用 hexo d 进行配置自动部署
 ```
 
 ## 执行压缩
@@ -60,4 +60,4 @@ npm run gulp
 
 ## License
 
-[Apache License](./LICENSE)
+[MIT License](./LICENSE "LICENSE")
