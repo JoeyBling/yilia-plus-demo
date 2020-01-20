@@ -36,8 +36,8 @@ branches:
 
 deploy:
   provider: pages
-  # github-token: $GITHUB_TOKEN
-  # local-dir: ./
+  github-token: $GITHUB_TOKEN # github 上的token环境变量
+  local-dir: ./  # 根据情况自定义到静态文件输出目录
   skip-cleanup: true
   # 默认为gh-pages
   target-branch: gh-pages
