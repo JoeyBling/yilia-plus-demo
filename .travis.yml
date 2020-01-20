@@ -11,6 +11,7 @@ cache:
     - node_modules
 
 before_install:
+  - export TZ=Asia/Shanghai
 
 # S: Build LifeCycle
 install:
@@ -25,14 +26,14 @@ script:
   # - npm run gulp # 压缩
   - npm run dist # 工程构建打包
 
-after_script:
+after_success:
   - cd ./public
   - git init
   - git config user.name "JoeyBling"
   - git config user.email "2434387555@qq.com"
   - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" gh-pages:gh-pages
+  - git commit -m "deploy at `date +\"%Y-%m-%d %H:%M:%S\"`"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:gh-pages
 
 git:
   depth: false
@@ -58,4 +59,4 @@ deploy:
 
 env:
   global:
-    - GH_REF: https://github.com/JoeyBling/yilia-plus-demo.git
+    - GH_REF: github.com/JoeyBling/yilia-plus-demo.git
