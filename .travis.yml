@@ -27,14 +27,16 @@ script:
   - npm run dist # 工程构建打包
 
 after_success:
+  # - git init
+  - git clone https://${GITHUB_REPO} ./old-docs
+  - cp -r ./old-docs/.git ./public
   - cd ./public
-  - git init
   - git config user.name "JoeyBling"
   - git config user.email "2434387555@qq.com"
-  - git add .
+  - git add -A
   - git commit -m "deploy at `date +\"%Y-%m-%d %H:%M:%S\"`"
   - git push --force --quiet "https://${CI_TOKEN_GITHUB}@${GITHUB_REPO}" master:gh-pages
-  - git push --force --quiet "https://zhousiwei:${CI_TOKEN_GITEE}@${GITEE_REPO}" master:gh-pages
+  - git push --force --quiet "https://zhousiwei:${CI_TOKEN_GITEE}@${GITEE_REPO}" master:pages
 
 git:
   depth: false
