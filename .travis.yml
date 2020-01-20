@@ -22,7 +22,17 @@ script:
   # - npm run eslint # 工程测试
   # - npm run dev # 工程测试
   # - npm run clean # 清除缓存
+  # - npm run gulp # 压缩
   - npm run dist # 工程构建打包
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "JoeyBling"
+  - git config user.email "2434387555@qq.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" gh-pages:gh-pages
 
 git:
   depth: false
@@ -35,13 +45,17 @@ branches:
 #   - yarn build
 
 deploy:
-  provider: pages
+  # provider: pages
   github-token: $GITHUB_TOKEN # github 上的token环境变量
-  local-dir: ./  # 根据情况自定义到静态文件输出目录
+  local-dir: ./dist  # 根据情况自定义到静态文件输出目录
   skip-cleanup: true
   # 默认为gh-pages
-  target-branch: gh-pages
-  email: 2434387555@qq.com
-  name: JoeyBling
+  # target-branch: gh-pages
+  # email: 2434387555@qq.com
+  # name: JoeyBling
   on:
     branch: master # 当master分支有push事件的时候执行deploy流程
+
+env:
+  global:
+    - GH_REF: https://github.com/JoeyBling/yilia-plus-demo.git
