@@ -23,8 +23,8 @@ script:
   # - npm run eslint # 工程测试
   # - npm run dev # 工程测试
   # - npm run clean # 清除缓存
-  - npm run gulp # 压缩
   - npm run dist # 工程构建打包
+  - npm run gulp # 压缩
 
 after_success:
   # - git init
