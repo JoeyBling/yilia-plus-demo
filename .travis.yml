@@ -34,7 +34,7 @@ after_success:
   - git add .
   - git commit -m "deploy at `date +\"%Y-%m-%d %H:%M:%S\"`"
   - git push --force --quiet "https://${CI_TOKEN_GITHUB}@${GITHUB_REPO}" master:gh-pages
-  - git push --force --quiet "https://${CI_TOKEN_GITEE}@${GITEE_REPO}" master:gh-pages
+  - git push --force --quiet "https://zhousiwei:${CI_TOKEN_GITEE}@${GITEE_REPO}" master:gh-pages
 
 git:
   depth: false
@@ -55,8 +55,8 @@ deploy:
   # target-branch: gh-pages
   # email: 2434387555@qq.com
   # name: JoeyBling
-  on:
-    branch: master # 当master分支有push事件的时候执行deploy流程
+  # on:
+    # branch: master # 当master分支有push事件的时候执行deploy流程
 
 env:
   global:
