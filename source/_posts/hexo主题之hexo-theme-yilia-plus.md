@@ -4,7 +4,7 @@ date: 2019.08.01 11:43
 tags: Hexo
 description: hexo主题之hexo-theme-yilia-plus
 ---
-hexo-theme-yilia-plus(Test .travis.yml)
+hexo-theme-yilia-plus(Test .travis.yml222)
 ================
 
 > 一个简洁优雅的hexo主题 ➡️ [https://github.com/JoeyBling/hexo-theme-yilia-plus](https://github.com/JoeyBling/hexo-theme-yilia-plus)
