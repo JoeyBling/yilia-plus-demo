@@ -33,6 +33,7 @@ after_success:
   - cd ./old-docs
   # 检出远程分支
   - git checkout -b gh-pages origin/gh-pages
+  - git checkout -a
   - cd ../
   - cp -r ./old-docs/.git ./public
   # 编译目录
@@ -40,6 +41,7 @@ after_success:
   - git config user.name "JoeyBling"
   - git config user.email "2434387555@qq.com"
   - git add -A
+  - git checkout -a
   - git commit -m "deploy at `date +\"%Y-%m-%d %H:%M:%S\"`"
   - git push --force --quiet "https://${CI_TOKEN_GITHUB}@${GITHUB_REPO}" master:gh-pages
   # - git push --force --quiet "https://zhousiwei:${CI_TOKEN_GITEE}@${GITEE_REPO}" master:pages
