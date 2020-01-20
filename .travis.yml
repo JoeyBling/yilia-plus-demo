@@ -28,8 +28,14 @@ script:
 
 after_success:
   # - git init
+  # 从远程拉取代码记录
   - git clone https://${GITHUB_REPO} ./old-docs
+  - cd ./old-docs
+  # 检出远程分支
+  - git checkout -b gh-pages origin/gh-pages
+  - cd ../
   - cp -r ./old-docs/.git ./public
+  # 编译目录
   - cd ./public
   - git config user.name "JoeyBling"
   - git config user.email "2434387555@qq.com"
